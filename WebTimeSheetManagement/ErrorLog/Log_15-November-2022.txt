@@ -1,0 +1,51 @@
+
+15-11-2022 08:33:29
+------------------------------------------------------------------------------------------------
+Controller Name :- Login
+Action Method Name :- Login
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The type initializer for 'System.Data.Entity.Internal.AppConfig' threw an exception.
+Source ---
+{0}EntityFramework
+StackTrace ---
+{0}   at System.Data.Entity.Internal.LazyInternalConnection..ctor(DbContext context, String nameOrConnectionString)
+   at System.Data.Entity.DbContext..ctor(String nameOrConnectionString)
+   at WebTimeSheetManagement.Concrete.DatabaseContext..ctor() in C:\Users\YW259ZL\source\repos\ms-ars-dotnet-poc\WebTimeSheetManagement.Concrete\DatabaseContext.cs:line 12
+   at WebTimeSheetManagement.Concrete.AuditConcrete.InsertAuditData(AuditTB audittb) in C:\Users\YW259ZL\source\repos\ms-ars-dotnet-poc\WebTimeSheetManagement.Concrete\AuditConcrete.cs:line 15
+   at WebTimeSheetManagement.Filters.UserAuditFilter.OnActionExecuting(ActionExecutingContext filterContext) in C:\Users\YW259ZL\source\repos\ms-ars-dotnet-poc\WebTimeSheetManagement\Filters\UserAuditFilter.cs:line 70
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void .ctor(System.Data.Entity.DbContext, System.String)
+Inner Exception is {0}System.Configuration.ConfigurationErrorsException: The configBuilder 'AzureKeyVault' failed while processing the configuration section 'connectionStrings'.: Error in Configuration Builder 'AzureKeyVault'::GetValue(LocalSqlServer) (C:\Users\YW259ZL\source\repos\ms-ars-dotnet-poc\WebTimeSheetManagement\web.config line 26) ---> System.Exception: Error in Configuration Builder 'AzureKeyVault'::GetValue(LocalSqlServer) ---> System.AggregateException: One or more errors occurred. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value, IEqualityComparer`1 comparer)
+   at Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder.<GetValueAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder.<>c__DisplayClass13_0.<<GetValue>b__0>d.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.Configuration.ConfigurationBuilders.AzureKeyVaultConfigBuilder.GetValue(String key)
+   at Microsoft.Configuration.ConfigurationBuilders.KeyValueConfigBuilder.GetValueInternal(String key)
+   --- End of inner exception stack trace ---
+   at Microsoft.Configuration.ConfigurationBuilders.KeyValueConfigBuilder.GetValueInternal(String key)
+   at Microsoft.Configuration.ConfigurationBuilders.KeyValueConfigBuilder.ProcessConfigurationSection(ConfigurationSection configSection)
+   at System.Configuration.BaseConfigurationRecord.CallHostProcessConfigurationSection(ConfigurationSection configSection, ConfigurationBuilder configBuilder)
+   --- End of inner exception stack trace ---
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.get_ConnectionStrings()
+   at System.Data.Entity.Internal.AppConfig..ctor()
+   at System.Data.Entity.Internal.AppConfig..cctor()
+
